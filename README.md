@@ -38,8 +38,8 @@ The script reports SVG file size and node counts, then writes a small HTML previ
 
 ## Comparison
 
-| Standard Codex SVG | Imagegen + Vectorization-Aware Prompt |
+| Standard Codex SVG | `1-shot-svg` Skill |
 | --- | --- |
-| `Create a square SVG asset of a pelican riding a bicycle.` | `Create one isolated pelican riding a bicycle as a square website illustration source PNG for later local SVG vectorization with VTracer. Use large flat color regions, 8 to 12 colors, crisp hard edges, no texture, no gradients, no tiny detail, no fine lines, and no small disconnected islands.` |
+| User prompt: `Create a square SVG asset of a pelican riding a bicycle.` | Same user prompt. The skill expands it for image generation and local VTracer conversion. |
 | <img src="examples/pelican-codex-baseline.png" alt="Standard Codex SVG pelican bicycle result" width="260"> | <img src="examples/pelican-skill-vector-aware.png" alt="Imagegen with vectorization-aware prompt pelican bicycle result" width="260"> |
 | 4.7 KB, 41 shapes. | 130.8 KB, 139 paths. |
