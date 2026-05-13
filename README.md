@@ -40,7 +40,8 @@ The script reports SVG file size and node counts, then writes a small HTML previ
 
 The same prompt was tested three ways:
 
-| First `1-shot-svg` Pass | Vectorization-Aware `1-shot-svg` Pass | Standard Codex SVG |
-| --- | --- | --- |
-| ![First 1-shot-svg pelican bicycle result](examples/pelican-skill-original.png) | ![Vectorization-aware 1-shot-svg pelican bicycle result](examples/pelican-skill-vector-aware.png) | ![Standard Codex SVG pelican bicycle result](examples/pelican-codex-baseline.png) |
-| Strong imagegen fidelity, but heavy after tracing: 777 KB and 1,941 paths. | Prompt tells imagegen the PNG will become an SVG with VTracer, keeping the charm while dropping to 130.8 KB and 139 paths. | Tiny at 4.7 KB and 41 shapes, but more like a rough icon than a polished generated illustration. |
+| Approach | Result |
+| --- | --- |
+| First `1-shot-svg` pass | ![First 1-shot-svg pelican bicycle result](examples/pelican-skill-original.png)<br>Strong imagegen fidelity, but heavy after tracing: 777 KB and 1,941 paths. |
+| Vectorization-aware `1-shot-svg` pass | ![Vectorization-aware 1-shot-svg pelican bicycle result](examples/pelican-skill-vector-aware.png)<br>Prompt tells imagegen the PNG will become an SVG with VTracer, keeping the charm while dropping to 130.8 KB and 139 paths. |
+| Standard Codex SVG | ![Standard Codex SVG pelican bicycle result](examples/pelican-codex-baseline.png)<br>Tiny at 4.7 KB and 41 shapes, but more like a rough icon than a polished generated illustration. |
