@@ -35,3 +35,15 @@ node scripts/audit-vector-candidates.mjs --background "#f7f5ef" --out preview.ht
 ```
 
 The script reports SVG file size and node counts, then writes a small HTML preview on the intended background. Visual quality in context should make the final call.
+
+## Comparison
+
+The same prompt was tested three ways:
+
+![Pelican bicycle comparison](examples/pelican-comparison-3way.png)
+
+Left: first `1-shot-svg` pass. Strong imagegen fidelity, but the trace is heavy: 777 KB and 1,941 paths.
+
+Middle: vectorization-aware `1-shot-svg` pass. The prompt tells imagegen the PNG will be converted to SVG with VTracer and asks for large simple color regions. This keeps the charm while dropping to 130.8 KB and 139 paths.
+
+Right: standard hand-authored Codex SVG. Tiny at 4.7 KB and 41 shapes, but more like a rough icon than a polished generated illustration.

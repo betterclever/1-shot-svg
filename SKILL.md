@@ -21,8 +21,10 @@ Use this skill when a project needs a polished website asset that feels like SVG
    - exact intended dimensions
    - one asset only, centered with generous padding
    - flat corporate Memphis, modern editorial vector, geometric SaaS, or similar flat-color style
+   - explicitly say this PNG will be converted to SVG with VTracer, so the generator should use large simple color regions
    - no text, labels, letters, watermarks, UI chrome, logos, or mock brand marks
    - clean flat fills, crisp edges, limited palette, minimal texture
+   - avoid tiny details, fine lines, dense wheel spokes, feather texture, stippling, gradients, and small disconnected islands
    - no shadows unless the final design explicitly needs them
 
 3. If transparency is needed, use a removable chroma-key source:
@@ -64,6 +66,7 @@ Asset type: website illustration asset
 Primary request: one isolated <subject> for <placement/context>
 Canvas: exactly <width>x<height>
 Style/medium: flat-color corporate Memphis / modern editorial vector illustration, clean geometric shapes, crisp edges, limited palette
+Vectorization constraints: this PNG will be converted to SVG with VTracer; use large flat color regions only, roughly 8 to 12 total colors, crisp hard edges, no texture, no gradients, no tiny detail, no fine lines, no small disconnected islands
 Composition/framing: single centered asset, generous transparent-safe padding, no crop
 Background: perfectly flat solid <key color> chroma-key background for removal
 Lighting/mood: no realistic lighting, no cast shadow, no contact shadow
