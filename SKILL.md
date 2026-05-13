@@ -1,8 +1,8 @@
 ---
 name: 1-shot-svg
-description: Generate production-quality SVG-like website assets in one shot by using imagegen to create isolated flat-color PNGs, removing chroma-key backgrounds when needed, vectorizing candidates, comparing quality/file size/path count, preserving PNG fallbacks, and wiring the selected SVG into a project. Use for corporate Memphis, editorial, SaaS, landing-page, hero, spot, and decorative web assets that should look vector-native but benefit from image generation.
+description: Generate production-quality SVG-like website assets in one shot by using imagegen to create isolated flat-color PNGs, removing chroma-key backgrounds when needed, vectorizing locally with the Cargo-installed VTracer CLI, comparing quality/file size/path count, preserving PNG fallbacks, and wiring the selected SVG into a project. Use for corporate Memphis, editorial, SaaS, landing-page, hero, spot, and decorative web assets that should look vector-native but benefit from image generation.
 license: MIT
-compatibility: Requires Codex image generation for source PNGs. Local vector fallback expects VTracer when available; premium web vectorizers may require browser access or accounts.
+compatibility: Requires Codex image generation for source PNGs and the local VTracer CLI installed with Cargo for SVG conversion.
 ---
 
 # 1-Shot SVG
@@ -45,14 +45,12 @@ Use this skill when a project needs a polished website asset that feels like SVG
 4. Preserve named candidate assets:
    - `asset-name-source.png`
    - `asset-name-alpha.png` when chroma-key removal is used
-   - `asset-name-vectorizer-ai.svg`, `asset-name-vectorizer-io.svg`, `asset-name-vtracer.svg`, etc.
+   - `asset-name-vtracer.svg` or named VTracer setting variants such as `asset-name-vtracer-low-detail.svg`
    - `asset-name.png` as the fallback if the vector result is too heavy or visually worse
 
 5. Vectorize and compare candidates:
-   - Prefer Vectorizer.AI or Vectorizer.io when available because they usually preserve flat illustration quality better.
-   - Use VTracer as the best local CLI fallback.
-   - Avoid naive potrace color-mask pipelines except as a last resort.
-   - For details and fallback commands, read [references/vectorization.md](references/vectorization.md).
+   - Use the local Cargo-installed VTracer CLI.
+   - For VTracer setup, commands, and tuning, read [references/vectorization.md](references/vectorization.md).
 
 6. Audit the candidates:
    - preview on the actual intended page background
@@ -64,7 +62,7 @@ Use this skill when a project needs a polished website asset that feels like SVG
 7. Wire only the selected final asset into the project:
    - keep the best SVG in the project asset directory
    - keep the PNG fallback next to it or in the established fallback asset location
-   - update imports, image tags, CSS backgrounds, or component props using the project’s existing patterns
+   - update imports, image tags, CSS backgrounds, or component props using the project's existing patterns
    - do not leave project-referenced assets only under `$CODEX_HOME/generated_images`
 
 ## Imagegen Prompt Template
