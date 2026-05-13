@@ -1,8 +1,8 @@
 ---
 name: 1-shot-svg
-description: Generate production-quality SVG-like website assets in one shot by using imagegen to create isolated flat-color PNGs, removing chroma-key backgrounds when needed, vectorizing locally with the Cargo-installed VTracer CLI, comparing quality/file size/path count, preserving PNG fallbacks, and wiring the selected SVG into a project. Use for corporate Memphis, editorial, SaaS, landing-page, hero, spot, and decorative web assets that should look vector-native but benefit from image generation.
+description: Generate production-quality SVG-like website assets in one shot by creating isolated flat-color PNGs, removing chroma-key backgrounds when needed, vectorizing locally with the Cargo-installed VTracer CLI, comparing quality/file size/path count, preserving PNG fallbacks, and wiring the selected SVG into a project. Use for corporate Memphis, editorial, SaaS, landing-page, hero, spot, and decorative web assets that should look vector-native but benefit from image generation.
 license: MIT
-compatibility: Requires Codex image generation for source PNGs and the local VTracer CLI installed with Cargo for SVG conversion.
+compatibility: Requires an image generation tool for source PNGs and the local VTracer CLI installed with Cargo for SVG conversion.
 ---
 
 # 1-Shot SVG
@@ -17,7 +17,7 @@ Use this skill when a project needs a polished website asset that feels like SVG
    - desired density, stroke/shape style, and nearby UI
    - final import path and component/CSS conventions
 
-2. Generate exactly one isolated source PNG with the `imagegen` skill:
+2. Generate exactly one isolated source PNG with the available image generation tool:
    - exact intended dimensions
    - one asset only, centered with generous padding
    - flat corporate Memphis, modern editorial vector, geometric SaaS, or similar flat-color style
@@ -29,18 +29,7 @@ Use this skill when a project needs a polished website asset that feels like SVG
    - request a perfectly flat solid background such as `#00ff00` or `#ff00ff`
    - forbid that key color inside the subject
    - forbid shadows, gradients, floor planes, reflections, or lighting variation in the background
-   - remove the key locally with:
-
-   ```bash
-   python "${CODEX_HOME:-$HOME/.codex}/skills/.system/imagegen/scripts/remove_chroma_key.py" \
-     --input source.png \
-     --out source-alpha.png \
-     --auto-key border \
-     --soft-matte \
-     --transparent-threshold 12 \
-     --opaque-threshold 220 \
-     --despill
-   ```
+   - remove the key locally with the available chroma-key removal helper, using soft matte/despill settings for antialiased edges
 
 4. Preserve named candidate assets:
    - `asset-name-source.png`
@@ -63,9 +52,9 @@ Use this skill when a project needs a polished website asset that feels like SVG
    - keep the best SVG in the project asset directory
    - keep the PNG fallback next to it or in the established fallback asset location
    - update imports, image tags, CSS backgrounds, or component props using the project's existing patterns
-   - do not leave project-referenced assets only under `$CODEX_HOME/generated_images`
+   - store every project-referenced asset inside the project, not in a generator cache or temporary output folder
 
-## Imagegen Prompt Template
+## Image Prompt Template
 
 Use a compact, production-oriented prompt like this:
 
