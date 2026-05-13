@@ -16,14 +16,9 @@ npx skills add betterclever/1-shot-svg --skill 1-shot-svg
 
 ## Requirements
 
-Install VTracer locally:
+The skill expects access to an image generation tool that can produce a single isolated flat-color PNG at the requested dimensions.
 
-```bash
-cargo install vtracer
-vtracer --version
-```
-
-The skill also expects access to an image generation tool that can produce a single isolated flat-color PNG at the requested dimensions.
+For SVG conversion, the agent checks whether the local VTracer CLI is available. If it is missing, the agent should ask before installing it with Cargo.
 
 ## Best Environment
 

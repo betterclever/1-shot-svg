@@ -6,16 +6,16 @@ Use this file when tuning local vectorization. Keep the source PNG and every can
 
 Use the Cargo-installed VTracer CLI for this workflow.
 
-Install or update VTracer with Cargo when needed:
-
-```bash
-cargo install vtracer
-```
-
-Confirm the CLI is available:
+Check for VTracer before tracing:
 
 ```bash
 vtracer --version
+```
+
+If it is missing, ask before installing or updating it with Cargo:
+
+```bash
+cargo install vtracer
 ```
 
 ## Baseline Command
