@@ -38,9 +38,8 @@ The script reports SVG file size and node counts, then writes a small HTML previ
 
 ## Comparison
 
-The same idea was tested two ways:
-
 | Standard Codex SVG | Imagegen + Vectorization-Aware Prompt |
 | --- | --- |
+| `Create a square SVG asset of a pelican riding a bicycle.` | `Create one isolated pelican riding a bicycle as a square website illustration source PNG for later local SVG vectorization with VTracer. Use large flat color regions, 8 to 12 colors, crisp hard edges, no texture, no gradients, no tiny detail, no fine lines, and no small disconnected islands.` |
 | <img src="examples/pelican-codex-baseline.png" alt="Standard Codex SVG pelican bicycle result" width="260"> | <img src="examples/pelican-skill-vector-aware.png" alt="Imagegen with vectorization-aware prompt pelican bicycle result" width="260"> |
-| Tiny at 4.7 KB and 41 shapes, but more like a rough icon than a polished generated illustration. | A standalone image prompt tells imagegen the PNG will become an SVG with VTracer, keeping the generated-illustration charm while producing a 130.8 KB, 139-path SVG. |
+| 4.7 KB, 41 shapes. | 130.8 KB, 139 paths. |
