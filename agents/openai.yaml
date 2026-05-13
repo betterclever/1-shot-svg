@@ -1,0 +1,6 @@
+interface:
+  display_name: "1-Shot SVG"
+  short_description: "Generate and vectorize polished web assets"
+  default_prompt: "Use $1-shot-svg to create a production-ready website illustration asset from imagegen through vectorized SVG and PNG fallback."
+policy:
+  allow_implicit_invocation: true
