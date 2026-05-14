@@ -25,6 +25,7 @@ Use this skill when a project needs a polished website asset that feels like SVG
    - no text, labels, letters, watermarks, UI chrome, logos, or mock brand marks
    - clean flat fills, crisp edges, limited palette, minimal texture
    - avoid tiny details, fine lines, dense wheel spokes, feather texture, stippling, gradients, and small disconnected islands
+   - protect readability under heavy simplification: use distinct fills, clear outlines, and strong contrast between adjacent body parts
    - no shadows unless the final design explicitly needs them
 
 3. If transparency is needed, use a removable chroma-key source:
@@ -67,6 +68,7 @@ Primary request: one isolated <subject> for <placement/context>
 Canvas: exactly <width>x<height>
 Style/medium: flat-color corporate Memphis / modern editorial vector illustration, clean geometric shapes, crisp edges, limited palette
 Vectorization constraints: this PNG will be converted to SVG with VTracer; use large flat color regions only, roughly 8 to 12 total colors, crisp hard edges, no texture, no gradients, no tiny detail, no fine lines, no small disconnected islands
+Readability constraints: preserve the main subject as a clear silhouette under heavy simplification; use distinct fills, clean outlines, and strong contrast between adjacent body parts so no important area disappears into the background
 Composition/framing: single centered asset, generous transparent-safe padding, no crop
 Background: perfectly flat solid <key color> chroma-key background for removal
 Lighting/mood: no realistic lighting, no cast shadow, no contact shadow
